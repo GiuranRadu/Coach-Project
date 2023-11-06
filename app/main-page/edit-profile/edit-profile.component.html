@@ -1,0 +1,96 @@
+<div class="container">
+  <div>
+    <h2>Edit Profile:</h2>
+  </div>
+  <div class="form-container">
+    <form [formGroup]="updatedUserDetails">
+      <!-- First name -->
+      <div>
+        <label for="fname">First Name:</label>
+        <span
+          *ngIf="!updatedUserDetails.controls['fname'].valid && updatedUserDetails.controls['fname'].touched && !updatedUserDetails.controls['fname'].value"
+          class="red">Required</span>
+        <span
+          *ngIf="updatedUserDetails.controls['fname'].valid && !updatedUserDetails.controls['fname'].touched && updatedUserDetails.controls['fname'].value"
+          class="green">Good ✅</span>
+        <span *ngIf="updatedUserDetails.controls['fname'].errors?.['pattern']" class="red">Min 2 & only letters</span>
+      </div>
+      <input type="text" formControlName="fname" id="fname" >
+
+      
+      <!-- Last name -->
+      <div>
+        <label for="lname">Last Name:</label>
+        <span
+          *ngIf="!updatedUserDetails.controls['lname'].valid && updatedUserDetails.controls['lname'].touched && !updatedUserDetails.controls['lname'].value"
+          class="red">Required</span>
+        <span
+          *ngIf="updatedUserDetails.controls['lname'].valid && !updatedUserDetails.controls['lname'].touched && updatedUserDetails.controls['lname'].value"
+          class="green">Good ✅</span>
+        <span *ngIf="updatedUserDetails.controls['lname'].errors?.['pattern']" class="red">Min 2 & only letters</span>
+      </div>
+      <input type="text" formControlName="lname" id="lname" >
+
+
+      <!--  Email  -->
+      <div>
+        <label for="email">Email:</label>
+        <span
+        *ngIf="!updatedUserDetails.controls['email'].valid && updatedUserDetails.controls['email'].touched && !updatedUserDetails.controls['email'].value"
+        class="red">Required</span>
+      <span *ngIf="updatedUserDetails.controls['email'].dirty && updatedUserDetails.controls['email'].errors?.['validMail']"
+        class="red">Invalid format</span>
+      <span *ngIf="updatedUserDetails.controls['email'].dirty && !updatedUserDetails.controls['email'].errors?.['validMail']"
+        class="green">Good ✅</span>
+      </div>
+      <input type="email" formControlName="email" id="email">
+
+
+      <!-- Age -->
+      <div>
+        <label for="age">Age:</label>
+        <span
+        *ngIf="!updatedUserDetails.controls['age'].valid && updatedUserDetails.controls['age'].touched && !updatedUserDetails.controls['age'].value"
+        class="red">Required</span>
+        <span *ngIf="updatedUserDetails.controls['age'].dirty && updatedUserDetails.controls['age'].errors?.['ageRange']" class="red">Must be between 18 and 85</span>
+        <span *ngIf="updatedUserDetails.controls['age'].dirty && !updatedUserDetails.controls['age'].errors?.['ageRange']" class="green">Good ✅</span>
+      </div>
+      <input type="number" formControlName="age" id="age" >
+
+
+      <!-- Password -->
+      <div>
+        <label for="password">Password:</label>
+        <span
+        *ngIf="!updatedUserDetails.controls['password'].valid && updatedUserDetails.controls['password'].touched && !updatedUserDetails.controls['password'].value"
+        class="red">Required</span>
+      <span *ngIf="updatedUserDetails.controls['password'].dirty && updatedUserDetails.controls['password'].errors?.['validPassword']"
+        class="red">Invalid format</span>
+      <span *ngIf="updatedUserDetails.controls['password'].dirty && !updatedUserDetails.controls['password'].errors?.['validPassword']"
+        class="green">Good ✅</span>
+      </div>
+      <input type="password" formControlName="password" id="password" >
+
+
+      <!-- Password Confirmation -->
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <span
+        *ngIf="updatedUserDetails.controls['confirmPassword'].hasError('required') && updatedUserDetails.controls['confirmPassword'].touched"
+        class="red">Required</span>
+      <span
+        *ngIf="updatedUserDetails.controls['confirmPassword'].value !== updatedUserDetails.controls['password'].value && updatedUserDetails.controls['confirmPassword'].touched"
+        class="red">Not matching</span>
+      <span
+        *ngIf="updatedUserDetails.controls['confirmPassword'].value === updatedUserDetails.controls['password'].value && updatedUserDetails.controls['confirmPassword'].touched"
+        class="green">Good ✅</span>
+      </div>
+      <input type="password" formControlName="confirmPassword" id="confirmPassword" >
+
+      <button *ngIf="Switch" (click)="showCurrentInfo()" class="submit-button">Show user informations</button>
+      <button *ngIf="!Switch" (click)="updateInfo()" [ngClass]="{'update-button': updatedUserDetails.valid, 'update-button-disabled': updatedUserDetails.invalid}" [disabled]="updatedUserDetails.invalid">Update informations</button>
+      <button *ngIf="!Switch" (click)="cancel()" class="cancel-button">Cancel</button>
+    </form>
+
+  </div>
+</div>

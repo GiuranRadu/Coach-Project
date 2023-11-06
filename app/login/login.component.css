@@ -1,0 +1,99 @@
+.container {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin:0 auto;  
+}
+
+h2 {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.shake {
+  animation: shake 0.7s;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+
+
+.container .forgot-button {
+  color: rgb(199, 68, 114);
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  background-color: whitesmoke;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.tooltip-div{
+  position:relative;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #8f8f8f;
+  color:white;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1;
+  top:-20px;
+  left: 150px;
+}
+
+.zoom{
+  animation: zoomInFade 6.0s;
+
+}
+
+
+@keyframes zoomInFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(10);
+  }
+}

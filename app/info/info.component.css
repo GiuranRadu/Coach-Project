@@ -1,0 +1,81 @@
+.big-container{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-image: url('../../assets/stadium.jpg');
+  height: 91vh;
+  background-repeat: no-repeat;
+  background-size:cover; 
+  
+}
+
+
+.info-container {
+  max-width: 1100px;
+  margin-top: 50px;  
+  height: 80%;
+  /* margin: auto;   */
+  background-color: black;
+  color:whitesmoke;
+  padding: 60px;
+  opacity: 0.7;
+  border-radius: 20px;
+  display: flex;
+}
+
+.text-container{
+  padding: 0 40px ;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.important-note {
+  color: red;
+}
+
+.img-div img{
+  width: 100px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1150px){
+  .big-container{
+    height: 100%;
+  }
+  
+  .info-container{
+    width: 60%;
+    height: 90%;
+  }
+}
+
+@media (max-width:850px){
+  .img-div {
+    width: 70%;
+  }
+  .img-div img{
+    width: 80%;
+  }
+}
+
+@media (max-width:650px){
+  .info-container{
+    padding: 20px;
+  }
+
+  .img-div{
+    display: none;
+  }
+
+  .div-text-container{
+    width: 100%;
+  }
+}
+
+

@@ -1,0 +1,93 @@
+<div class="container">
+  <div>
+    <h2>Register</h2>
+  </div>
+  <div class="form-container">
+    <form [formGroup]="userForm" (ngSubmit)="register()">
+      <!-- First name -->
+      <div>
+        <label for="fname">First Name:</label>
+        <span
+          *ngIf="!userForm.controls['fname'].valid && userForm.controls['fname'].touched && !userForm.controls['fname'].value"
+          class="red">Required</span>
+        <span
+          *ngIf="userForm.controls['fname'].valid && !userForm.controls['fname'].touched && userForm.controls['fname'].value"
+          class="green">Good ✅</span>
+        <span *ngIf="userForm.controls['fname'].errors?.['pattern']" class="red">Min 2 & only letters</span>
+        <input type="text" formControlName="fname" id="fname">
+      </div>
+
+      <!-- Last name -->
+      <div>
+        <label for="lname">Last Name:</label>
+        <span
+          *ngIf="!userForm.controls['lname'].valid && userForm.controls['lname'].touched && !userForm.controls['lname'].value"
+          class="red">Required</span>
+        <span
+          *ngIf="userForm.controls['lname'].valid && !userForm.controls['lname'].touched && userForm.controls['lname'].value"
+          class="green">Good ✅</span>
+        <span *ngIf="userForm.controls['lname'].errors?.['pattern']" class="red">Min 2 & only letters</span>
+        <input type="text" formControlName="lname" id="lname">
+      </div>
+
+      <!--  Email  -->
+      <div>
+        <label for="email">Email:</label>
+        <span
+          *ngIf="!userForm.controls['email'].valid && userForm.controls['email'].touched && !userForm.controls['email'].value"
+          class="red">Required</span>
+        <span *ngIf="userForm.controls['email'].dirty && userForm.controls['email'].errors?.['validMail']"
+          class="red">Invalid format</span>
+        <span *ngIf="userForm.controls['email'].dirty && !userForm.controls['email'].errors?.['validMail']"
+          class="green">Good ✅</span>
+        <input type="email" formControlName="email" id="email">
+      </div>
+
+      <!-- Age -->
+      <div>
+        <label for="age">Age:</label>
+        <span
+          *ngIf="!userForm.controls['age'].valid && userForm.controls['age'].touched && !userForm.controls['age'].value"
+          class="red">Required</span>
+        <span *ngIf="userForm.controls['age'].dirty && userForm.controls['age'].errors?.['ageRange']" class="red">Must
+          be between 18 and 85</span>
+        <span *ngIf="userForm.controls['age'].dirty && !userForm.controls['age'].errors?.['ageRange']"
+          class="green">Good ✅</span>
+        <input type="number" formControlName="age" id="age">
+      </div>
+
+
+      <!-- Password -->
+      <div>
+        <label for="password">Password:</label>
+        <span
+          *ngIf="!userForm.controls['password'].valid && userForm.controls['password'].touched && !userForm.controls['password'].value"
+          class="red">Required</span>
+        <span *ngIf="userForm.controls['password'].dirty && userForm.controls['password'].errors?.['validPassword']"
+          class="red">Invalid format</span>
+        <span *ngIf="userForm.controls['password'].dirty && !userForm.controls['password'].errors?.['validPassword']"
+          class="green">Good ✅</span>
+        <input type="password" formControlName="password" id="password">
+      </div>
+
+
+      <!-- Password Confirmation -->
+
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <!-- <span
+          *ngIf="userForm.controls['confirmPassword'].hasError('required') && userForm.controls['confirmPassword'].touched"
+          class="red">Required</span> -->
+        <span *ngIf="userForm.controls['confirmPassword'].touched && userForm.invalid" class="red">Not matching</span>
+        <span *ngIf="userForm.valid" class="green">Good ✅</span>
+        <input type="password" formControlName="confirmPassword" id="confirmPassword">
+      </div>
+
+
+
+      <button [ngClass]="{'submit-button': userForm.valid, 'submit-button-disabled': userForm.invalid}"
+        [disabled]="userForm.invalid">Add User</button>
+    </form>
+  </div>
+</div>
+<!-- <button (click)="test()">TEST</button> -->

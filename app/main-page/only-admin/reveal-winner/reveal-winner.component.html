@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="wrapper">
+    <button (click)="revealFunction()" class="reveal-button" #revealButton>Reveal the best Player</button>
+    <div class="display-info-div">
+      <h2 *ngIf="!theBestPlayer">Can you guess who is the Ballon d'Or Winner ?? </h2>
+      <p *ngIf="theBestPlayer">The best goalscorer is {{theBestPlayer.playerFullName}} with {{theBestPlayer.goals}}
+        goals. He is originary from {{theBestPlayer.continent}} and he is {{theBestPlayer.age}} years old.</p>
+      <div *ngIf="theBestPlayer" class="image-div">
+        <img src="../../../../assets/unknown-player.jpg" alt="">
+      </div>
+    </div>
+    <div class="box" *ngIf="theBestPlayer">
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets/gold-ball.jpg" alt=""></div>
+      <div><img src="../../../../assets//gold-medal-svgrepo-com.svg" alt=""></div>
+      <div><img src="../../../../assets//gold-medal-svgrepo-com.svg" alt=""></div>
+      <div><img src="../../../../assets//gold-medal-svgrepo-com.svg" alt=""></div>
+      <div><img src="../../../../assets//gold-medal-svgrepo-com.svg" alt=""></div>
+      <div><img src="../../../../assets//gold-medal-svgrepo-com.svg" alt=""></div>
+      <div><img src="../../../../assets//gold-medal-svgrepo-com.svg" alt=""></div>
+      <div><img src="../../../../assets//gold-medal-svgrepo-com.svg" alt=""></div>
+    </div>
+
+  </div>
+  <div class="stand-div">
+    <img src="../../../../assets/stand.avif" alt="">
+    <p class="first-place">{{theBestPlayer.playerFullName}}🥇</p>
+    <p class="second-place">{{secondBestPlayer.playerFullName}}({{secondBestPlayer.goals}})</p>
+    <p class="third-place">{{thirdBestPlayer.playerFullName}}({{thirdBestPlayer.goals}})</p>
+  </div>
+</div>

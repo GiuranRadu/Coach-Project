@@ -1,0 +1,244 @@
+.container{
+  display: inline;
+}
+
+.wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* background: linear-gradient(90deg, rgba(2,0,.6,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1)100%); */
+  background-image: url(../../../../assets/ballon-d-or.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.display-info-div{
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);  
+  font-weight: bold;
+  color:whitesmoke;
+}
+
+.display-info-div h2{
+  font-size: 40px;
+  text-align: center;
+  z-index: 1;
+  line-height: 50px;
+  background-color: rgba(0, 0, 0, 0.645);
+  border-radius: 10px;
+  padding: 20px ;
+}
+
+.display-info-div p{
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  background-color: rgba(3, 1, 17, 0.674); 
+  margin: 0;
+  padding: 15px 10px;
+  line-height: 30px;
+
+}
+
+.image-div{
+  width: 100%;
+}
+
+.image-div img{
+  width: 100%;
+}
+
+.box div{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  /* border: 6px solid rgba(255,255,255,0.8); */
+  z-index: 1;
+
+}
+
+.box div img{
+  width: 100%;
+  border-radius: 200px;
+  
+}
+
+.reveal-button{
+  background-color: goldenrod;
+  margin: 50px 0 0 50px;
+  color: whitesmoke;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+
+.reveal-button:hover{
+  background-color: gold;
+}
+
+.box div:nth-child(1){
+  top:15%;
+  left:42%;
+  animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(2){
+  top:70%;
+  left:50%;
+  animation: animate 7s linear infinite;
+}
+
+.box div:nth-child(3){
+  top:17%;
+  left:6%;
+  animation: animate 6s linear infinite;
+}
+
+.box div:nth-child(4){
+  top:20%;
+  left:60%;
+  animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(5){
+  top:67%;
+  left:10%;
+  animation: animate 6s linear infinite;
+}
+
+.box div:nth-child(6){
+  top:80%;
+  left:70%;
+  animation: animate 12s linear infinite;
+}
+
+.box div:nth-child(7){
+  top:60%;
+  left:80%;
+  animation: animate 15s linear infinite;
+}
+
+.box div:nth-child(8){
+  top:32%;
+  left:25%;
+  animation: animate 16s linear infinite;
+}
+
+.box div:nth-child(9){
+  top:90%;
+  left:25%;
+  animation: animate 9s linear infinite;
+}
+
+.box div:nth-child(10){
+  top:20%;
+  left:80%;
+  animation: animate 5s linear infinite;
+}
+
+.box div:nth-child(11){
+  top:25%;
+  left:90%;
+  animation: animate2 5s linear infinite;
+}
+
+.box div:nth-child(12){
+  top:45%;
+  left:80%;
+  animation: animate2 8s linear infinite;
+}
+
+.box div:nth-child(13){
+  top:45%;
+  left:50%;
+  animation: animate2 8s linear infinite;
+}
+
+.box div:nth-child(14){
+  top:55%;
+  left:40%;
+  animation: animate2 8s linear infinite;
+}
+
+.box div:nth-child(15){
+  top:45%;
+  left:30%;
+  animation: animate2 4s linear infinite;
+
+}
+
+.box div:nth-child(16){
+  top:65%;
+  left:20%;
+  animation: animate2 8s linear infinite;
+}
+
+.box div:nth-child(17){
+  top:45%;
+  left:10%;
+  animation: animate2 6s linear infinite;
+}
+
+.stand-div{
+  width: 600px;
+  /* position: relative; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.stand-div p{
+  position: absolute;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.stand-div img{
+  width: 600px;
+  border-radius: 10px;
+}
+
+.first-place{
+  top:55%;
+  left:40%;
+  color:black
+}
+
+.second-place{
+  top:63%;
+  left:15%;
+  color:black
+}
+
+.third-place{
+  top:65%;
+  left:70%;
+  color:black
+}
+
+@keyframes animate{
+  0%{
+    transform: scale(0.2) translateY(0) rotate(0);
+    opacity: 0.4;
+  }
+  100%{
+    transform: scale(1) translateY(-90px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes animate2{
+  0%{
+    transform: scale(0.2) translateY(0) translateX(0) rotate(0);
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1) translateY(-90px) translateX(90px) rotate(0deg);
+    opacity: 0;
+  }
+}

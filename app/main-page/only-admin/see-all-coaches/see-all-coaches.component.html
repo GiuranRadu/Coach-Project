@@ -1,0 +1,50 @@
+<button (click)="redirect()" class="goBack-button">To Admin Page</button>
+<!-- <button (click)="test()">TEST</button> -->
+<h2>All Other Coaches Info</h2>
+<div class="container">
+
+  <div class="all-coaches-container">
+    <div *ngFor="let coach of allCoaches" >
+      <div class="coach-container">
+        <h3>Coach: {{ coach.fname }} {{ coach.lname }}</h3>
+        <p>Age: {{coach.age}}</p>
+        <p>Email: {{coach.email}}</p>
+        <p>ID: {{coach.id}}</p>
+  
+        <button class="btn edit-button" (click)="displayInfo(coach.id)">Edit</button>
+        <button class="btn delete-button" (click)="deleteCoach(coach.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="updatedUserDetails">
+      <label for="fname">First Name:</label>
+      <input type="text" formControlName="fname" id="fname">
+
+      <label for="lname">Last Name:</label>
+      <input type="text" formControlName="lname" id="lname">
+
+      <div class="tooltip-div">
+        <label for="email" >Email:</label>
+        <input 
+        type="text" 
+        formControlName="email" 
+        id="email"  
+        readonly="readonly"  
+        (mouseenter)="showMessage = true;" 
+        (mouseleave)="showMessage = false">
+        
+        <div *ngIf="showMessage" class="tooltip">
+          Only user itself can modify email
+        </div>
+      </div>
+     
+
+      <label for="age">Age:</label>
+      <input type="number" formControlName="age" id="age">
+      <button *ngIf="Switch" (click)="update()" class="update-button">Update Details</button>
+      <button *ngIf="Switch" (click)="cancel()" class="cancel-button">Cancel</button>
+    </form>
+  </div>  
+</div>

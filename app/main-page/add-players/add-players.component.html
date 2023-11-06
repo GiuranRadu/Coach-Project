@@ -1,0 +1,78 @@
+<mat-spinner *ngIf="spinner" class="spinner"></mat-spinner>
+<!-- <button (click)="testSpinner()">TEST spinner</button> -->
+<div class="addPlayers-container">
+  <button (click)="redirect()" class="goBack-button">Go to main Page</button>
+  <div class="form-container">
+    <h2>Add Player Info</h2>
+    <form [formGroup]="playersForm" (ngSubmit)="registerPlayer()">
+      <!-- Player Full Name -->
+      <div>
+        <label for="playerFullName">Full Name </label>
+        <span
+          *ngIf="!playersForm.controls['playerFullName'].valid && playersForm.controls['playerFullName'].touched && !playersForm.controls['playerFullName'].value"
+          class="red">Required</span>
+        <span
+          *ngIf="playersForm.controls['playerFullName'].valid && !playersForm.controls['playerFullName'].touched && playersForm.controls['playerFullName'].value"
+          class="green">Good ✅</span>
+        <span *ngIf="playersForm.controls['playerFullName'].errors?.['pattern']" class="red">Min 2 & only letters</span>
+        <input type="text" formControlName="playerFullName" id="playerFullName">
+      </div>
+
+      <!-- Age -->
+      <div>
+        <label for="age">Age</label>
+        <span
+          *ngIf="!playersForm.controls['age'].valid && playersForm.controls['age'].touched && !playersForm.controls['age'].value"
+          class="red">Required</span>
+        <span *ngIf="playersForm.controls['age'].dirty && playersForm.controls['age'].errors?.['ageRange']"
+          class="red">Must be between 15 and 45</span>
+        <span *ngIf="playersForm.controls['age'].dirty && !playersForm.controls['age'].errors?.['ageRange']"
+          class="green">Good ✅</span>
+        <input type="number" formControlName="age" id="age">
+      </div>
+      <!-- Salary -->
+      <div>
+        <label for="salary">Salary</label>
+        <span
+          *ngIf="!playersForm.controls['salary'].valid && playersForm.controls['salary'].touched && !playersForm.controls['salary'].value"
+          class="red">Required</span>
+        <span *ngIf="playersForm.controls['salary'].valid  && playersForm.controls['salary'].value" class="green">Good
+          ✅</span>
+
+        <input type="number" formControlName="salary" id="salary" min="0">
+
+      </div>
+      <!-- Goals -->
+      <div>
+        <label for="goals">Goals Scored</label>
+        <span
+          *ngIf="!playersForm.controls['goals'].valid && playersForm.controls['goals'].touched && !playersForm.controls['goals'].value"
+          class="red">Required</span>
+        <span *ngIf="playersForm.controls['goals'].valid  && playersForm.controls['goals'].value" class="green">Good
+          ✅</span>
+        <input type="number" formControlName="goals" id="goals" min="0">
+
+      </div>
+      <!-- Continent -->
+      <div>
+        <label for="continent">Select a continent:</label>
+        <span
+        *ngIf="!playersForm.controls['continent'].valid && playersForm.controls['continent'].touched && !playersForm.controls['continent'].value"
+        class="red">Required</span>
+      <span *ngIf="playersForm.controls['continent'].valid  && playersForm.controls['continent'].value" class="green">Good
+        ✅</span>
+        <select formControlName="continent" id="continent" name="continent">
+          <option value="Europe">Europe</option>
+          <option value="South America">South America</option>
+          <option value="North America">North America</option>
+          <option value="Africa">Africa</option>
+          <option value="Asia">Asia</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </div>
+
+      <button [ngClass]="{'submit-button': playersForm.valid, 'submit-button-disabled': playersForm.invalid}" #addedPlayer [disabled]="!playersForm.valid" >Add Player</button>
+    </form>
+  </div>
+
+</div>

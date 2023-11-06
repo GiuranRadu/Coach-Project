@@ -1,0 +1,138 @@
+.info-container{
+  padding-top: 50px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.table-container{
+  width: 100%;
+}
+
+.goBack-button{
+  background-color: red;
+  color:white;
+  border: none;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 40px 0 0 80px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #28282b;
+  color:whitesmoke;
+}
+
+tr:nth-child(odd) {
+  background-color: #ebf1b2;
+}
+
+.btn{
+  padding: 6px 20px;
+  margin-right: 10px;
+  border:none;
+  font-weight: bold;
+}
+
+.edit-btn{
+  background-color: green;
+  color:white;
+}
+
+.delete-btn{
+  background-color: rgb(255, 0, 0);
+  color:white;
+}
+
+.container{
+  display: flex;
+}
+.form-area{
+  width: 50%;
+  padding: 10px 15px;
+}
+input[type=text],
+input[type=number],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+ul li{
+  list-style-type: none;
+}
+
+.image-div{
+  margin-top: -150px;
+}
+
+
+.image-div img {
+  border-radius: 100%;
+  width: 100%;
+}
+
+.update-info-button,
+.cancel-button{
+  background-color: goldenrod;
+  border: none;
+  padding: 15px 20px;
+  width: 100%;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.cancel-button{
+  margin-top: 10px;
+  background-color:crimson;
+}
+
+.form-area-div{
+  width: 60%;
+  margin: 50px auto;
+}
+
+
+@media (max-width:850px){
+  .goBack-button{    
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    margin: 40px 0 20px 80px;
+  }
+}
+
+
+@media (max-width:731px){
+  .btn{
+    width: 70px;
+    margin: 2px;
+  }
+
+  .buttons-div{
+    width: 70px;
+    padding: 4px;
+  }
+}
+
+

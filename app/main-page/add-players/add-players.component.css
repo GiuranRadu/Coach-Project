@@ -1,0 +1,122 @@
+.addPlayers-container{
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  background-image: url('../../../assets/brazil-player.jpg');  
+}
+
+
+h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.goBack-button{
+  background-color: red;
+  color:white;
+  border: none;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 40px 0 0 80px;
+}
+
+.form-container{
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin:0 auto;
+  opacity: 0.92;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.submit-button-disabled {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  margin-top: 30px;
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+
+
+.red{
+  color:red;
+}
+
+.green{
+  color:green;
+}
+
+span{
+  background-color: lightgrey;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+
+.spinner{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index:1; 
+}
+
+
+@media (max-width:850px){
+  .goBack-button{    
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    margin: 40px 0 20px 80px;
+  }
+}
+
+@media (max-width:700px){
+  .form-container{
+    max-width: 400px;
+  }
+}
+
+@media (max-width:500px){
+  .form-container{
+    max-width: 350px;
+  }
+}

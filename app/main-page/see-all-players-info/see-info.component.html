@@ -1,0 +1,74 @@
+<button class="goBack-button" (click)="redirect()">Go to main Page</button>
+<div class="info-container">
+  <div class="table-container">
+    <p>Sort by:</p>
+    <table>
+      <tr>
+        <th>Player Full name <label>
+            <input type="radio" [(ngModel)]="sortBy" value="name" (change)="sortPlayers()">
+          </label></th>
+        <th>Age <label>
+            <input type="radio" [(ngModel)]="sortBy" value="age" (change)="sortPlayers()"></label></th>
+        <th>Salary 💰 <label>
+            <input type="radio" [(ngModel)]="sortBy" value="salary" (change)="sortPlayers()"></label></th>
+
+        <th>Goals ⚽ <label>
+            <input type="radio" [(ngModel)]="sortBy" value="goals" (change)="sortPlayers()"></label></th>
+
+        <th>Continent <label>
+            <input type="radio" [(ngModel)]="sortBy" value="continent" (change)="sortPlayers()"></label></th>        
+
+        <th>ID </th>       
+      </tr>
+      <tr *ngFor="let player of players; let i = index">
+        <td>{{i+1}}. {{player.playerFullName}} </td>
+        <td>{{player.age}}</td>
+        <td>${{player.salary}}</td>
+        <td>{{player.goals}}</td>
+        <td>{{player.continent}}</td>
+        <td>{{player.id}}</td>
+        <div class="buttons-div">
+          <button class="btn edit-btn" (click)="populateForm(player.id)">Edit</button>
+          <button class="btn delete-btn" (click)="delete(player.id)">Delete</button>
+        </div>        
+      </tr>
+    </table>
+  </div>  
+</div>
+
+<!-- UPDATE FORM -->
+
+  <div class="form-area-div">
+    <h3>Edit players details:</h3>
+    <form [formGroup] = 'editPlayerForm' >
+
+      <label> Full Name</label>
+      <input type="text" formControlName="playerFullName">
+  
+      <label>Age</label>
+      <input type="number" formControlName="age">
+
+      <label>Salary</label>
+      <input type="number" formControlName="salary">
+
+      <label>Goals</label>
+      <input type="number" formControlName="goals">
+
+      <label for="continent">Select a continent:</label>
+      <select formControlName="continent" id="continent" name="continent">
+        <option value="Europe">Europe</option>
+        <option value="South America">South America</option>
+        <option value="North America">North America</option>
+        <option value="Africa">Africa</option>
+        <option value="Asia">Asia</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+  
+
+      <button type="submit" class="update-info-button" (click)="updatePlayerInfo()">Update Player Details</button>
+      <button *ngIf="showCancelButton" class="cancel-button" (click)="cancelButton()">Cancel</button>
+    </form>
+    
+  </div>
+  
+

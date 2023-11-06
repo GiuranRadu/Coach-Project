@@ -1,0 +1,58 @@
+<div class="searchPlayers-container">
+  <button class="goBack-button" (click)="redirect()">Go to main Page</button>
+  <div class="container">
+    <h2>Search Players</h2>
+    <div class="search-div ">
+      <p>Search by name:</p>
+      <input type="text" [(ngModel)]="userInput" placeholder="Type a name:">
+      <button (click)="findPlayerByName()">Search</button>
+    </div>
+
+    <div class="search-div ">
+      <p>Search by Age:</p>
+      <input type="number" [(ngModel)]="startingAge" placeholder="From:">
+      <input type="number" [(ngModel)]="endingAge" placeholder="To:">
+      <button (click)="findPlayerbyAge()">Search</button>
+    </div>
+
+    <div class="search-div ">
+      <p>Search by Continent:</p>
+      <select  id="continent" name="continent" [(ngModel)]="continent" >
+        <option value="" disabled selected>Select Continent</option>
+        <option value="Europe">Europe</option>
+        <option value="South America">South America</option>
+        <option value="North America">North America</option>
+        <option value="Africa">Africa</option>
+        <option value="Asia">Asia</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+      <button (click)="findPlayerbyContinent()">Search</button>
+    </div>
+
+
+    <table *ngIf="playersFound.length > 0">
+      <tr >
+        <th>Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Goals</th>
+        <th>Continent</th>
+        <th>ID</th>
+      </tr>
+      <tr *ngFor="let player of playersFound">
+        <td>{{player['playerFullName']}}</td>
+        <td>{{player['age']}}</td>
+        <td>{{player['salary']}}</td>
+        <td>{{player['goals']}}</td>
+        <td>{{player['continent']}}</td>
+        <td>{{player['id']}}</td>        
+      </tr>
+    </table>
+    <button (click)="resetTable()" class="reset-button">Reset Table</button>
+
+  </div>
+
+ 
+
+  
+</div>

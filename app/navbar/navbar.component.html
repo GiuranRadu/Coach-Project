@@ -1,0 +1,20 @@
+<div class="navbar-container">
+  <div class="logo-div">
+    <img src="assets/ball-306820.svg" alt="minge">
+  </div>
+  <div class="navbar-title-div">
+    <h3 *ngIf="currentUser;else h3template">🏆 Welcome {{currentUser}} 🏆</h3>
+    <ng-template #h3template>No Coach Logged </ng-template>
+  </div>
+  <ul>
+    <li> <a href="" routerLinkActive="active" routerLink ='info'>Info</a> </li>
+    <li *ngIf="currentUser">  <a href="" routerLinkActive="active" routerLink ='mainPage'>Main Page</a></li>
+    <li *ngIf="!currentUser"> <a href="" routerLinkActive="active" routerLink ='login'>Login</a></li>
+    <!-- <div class="test-div" routerLinkActive="active" routerLink ='register'>Register </div> -->
+    <li *ngIf="!currentUser"> <a href="" routerLinkActive="active" routerLink ='register'>Register</a></li>
+    <li *ngIf="currentUser"> <a href="" routerLinkActive="active" routerLink ='editProfile'>Edit Profile</a></li>
+    <li *ngIf="isAdmin"> <a href="" routerLinkActive="active" routerLink ='only-admin'>Admin Page</a></li>
+    <button *ngIf="currentUser" class="logout-button" (click)="logoutUser()">Logout</button>
+  </ul>
+</div>
+

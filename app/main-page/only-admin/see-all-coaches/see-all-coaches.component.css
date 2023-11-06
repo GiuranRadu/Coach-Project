@@ -1,0 +1,175 @@
+.container{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+
+.all-coaches-container{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.form-container{
+  width: 100%;
+  margin: 0 auto;
+  margin-top:30px;
+}
+
+.form-container form {
+ width: 80%;
+ border: 2px black solid;
+ margin: 0 auto;
+ padding: 20px;
+ border: 1px solid #ccc;
+ border-radius: 8px;
+ background-color: #f9f9f9;
+
+}
+
+.coach-container{
+  border: 2px solid black;
+  margin-bottom:10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+}
+
+.coach-container h3{
+  font-weight: bold;
+}
+
+.coach-container .btn{
+  width: 100px;
+  margin-right: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  color:whitesmoke;
+
+}
+
+.edit-button{
+  background-color: green;
+}
+
+.delete-button{
+  background-color: red;
+}
+
+.update-button{
+  background-color: goldenrod;
+  color: whitesmoke;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.cancel-button{
+  background-color: crimson;
+  color: whitesmoke;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.cancel-button:hover{
+  background-color: rgb(155, 34, 58);
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"]
+{
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.goBack-button{
+  background-color: red;
+  color:white;
+  border: none;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 40px 0 0 80px;
+}
+
+h2{
+  text-align: center;
+}
+
+.tooltip-div{
+  position:relative;
+}
+
+
+.tooltip {
+  position: absolute;
+  background-color: #8f8f8f;
+  color:white;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1;
+  bottom:-10px;
+  left: 150px;
+}
+
+
+
+
+@media (max-width:850px){
+  .all-coaches-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .container{
+    display: inline;
+  }
+
+  .coach-container .btn{
+    width: 60px;
+    border: 4px;
+  }
+}
+
+
+@media (max-width:800px){
+  .all-coaches-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .goBack-button{    
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    margin: 40px 0 20px 80px;
+  }
+}
+
+@media (max-width:550px){
+  .all-coaches-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

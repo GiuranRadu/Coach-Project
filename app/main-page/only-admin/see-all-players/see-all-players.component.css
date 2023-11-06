@@ -1,0 +1,161 @@
+.goBack-button {
+  background-color: red;
+  color: white;
+  border: none;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 40px 0 0 80px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  /* background-color: beige; */
+  padding: 30px;
+  display: flex;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.coach-container {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.li-container {
+  display: flex;
+  margin-left: 30px;
+  justify-content: space-between;
+}
+
+.buttons-div {
+  /* background-color: beige; */
+  width: 140px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.buttons-div button {
+  width: 60px;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.edit-button {
+  background-color: green;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.left-container {
+  width: 100%;
+}
+
+.form-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-container form {
+  width: 80%;
+  border: 2px black solid;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.update-button {
+  background-color: goldenrod;
+  color: whitesmoke;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  background-color: crimson;
+  color: whitesmoke;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+
+
+@media (max-width:850px) {
+  .container {
+    display: inline;
+
+  }
+
+  .left-container {
+    display: flex;
+    overflow-x: scroll;
+    /* Enable horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent line breaks between child elements */
+    width: 80%;
+    margin:0 auto;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+  }
+
+  .coach-container{
+    margin:0 5px;
+  }
+
+  .buttons-div button {
+    font-size: 10px;
+  }
+}
+
+
+
+@media (max-width:800px) {
+  .goBack-button {
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    margin: 40px 0 20px 80px;
+  }
+}

@@ -1,0 +1,60 @@
+<button (click)="redirect()" class="goBack-button">To Admin Page</button>
+<!-- <button (click)="test()">Test</button> -->
+<h2>Each Coach players</h2>
+
+<div class=container>
+  <div class="left-container">
+    <div *ngFor="let coach of allCoaches">
+      <div class="coach-container">
+        <h3>Coach: {{ coach.fname }} {{ coach.lname }}</h3>
+        <div>
+          <p>Players:</p>
+        </div>
+        <ul>
+          <li *ngFor="let player of coach.players;let i =index" class="li-container">
+            {{i+1}}.
+            {{ player.playerFullName }}
+            <!-- <span>{{ player.id }}</span> -->
+            <div class="buttons-div">
+              <button class="edit-button" (click)="displayInfo(player.id)">Edit</button>
+              <button class="delete-button" (click)="deletePlayer(coach.id, player.id)">Delete</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="updatedPlayerDetails">
+      <label for="playerFullName">Player Full Name:</label>
+      <input type="text" formControlName="playerFullName" id="playerFullName">
+
+      <label for="age">Age:</label>
+      <input type="number" formControlName="age" id="age">
+
+      <label for="salary">Salary:</label>
+      <input type="number" formControlName="salary" id="salary">
+
+      <label for="goals">Goals:</label>
+      <input type="number" formControlName="goals" id="goals">
+
+      <div>
+        <label for="continent">Select a continent:</label>
+        <select formControlName="continent" id="continent">
+          <option value="Europe">Europe</option>
+          <option value="South America">South America</option>
+          <option value="North America">North America</option>
+          <option value="Africa">Africa</option>
+          <option value="Asia">Asia</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </div>
+
+
+      <button *ngIf="Switch" (click)="update()" class="update-button">Update Details</button>
+      <button *ngIf="Switch" (click)="cancel()" class="cancel-button">Cancel</button>
+    </form>
+  </div>
+
+</div>

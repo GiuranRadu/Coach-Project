@@ -1,0 +1,32 @@
+<div class="container" #shakeContainer #zoomInContainer>
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <div *ngIf="!resetInput">
+      <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" formControlName="email">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" formControlName="password">
+        <button class="submit-button" #submitButton>Login</button>
+      </div>
+    </div>
+   
+    <div *ngIf="resetInput" class="tooltip-div">
+      <label for="emailToDelete">Enter email to reset:</label>
+      <input type="text" id="emailToDelete" name="emailToDelete" [(ngModel)]="resetInputValue" [ngModelOptions]="{standalone: true}" (mouseenter)="showMessage = true;" 
+      (mouseleave)="showMessage = false">
+   
+      <div *ngIf="showMessage" class="tooltip">
+        Careful, this will erase all your information!
+      </div>
+      <button class="submit-button" (click)="resetUser()"  type="button">Reset User</button>
+    </div>
+
+    
+  </form>
+  <button class="forgot-button" type="button" (click)="forgot()" #forgotButton>Forgot Password</button>
+</div>
+
+<!-- <button (click)="startZoom()">Zoom Test</button> -->

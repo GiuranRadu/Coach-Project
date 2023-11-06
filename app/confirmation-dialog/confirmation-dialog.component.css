@@ -1,0 +1,29 @@
+.confirm-dialog-div{
+  background-color: whitesmoke;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+.buttons-div{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.buttons-div button{
+  width: 150px;
+  padding: 10px 20px;
+}
+
+.yes-button{
+  background-color: crimson;
+  border: none;
+  color:whitesmoke
+}

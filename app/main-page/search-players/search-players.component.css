@@ -1,0 +1,163 @@
+.goBack-button {
+  background-color: red;
+  color: white;
+  border: none;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 40px 0 20px 80px;
+
+}
+
+.searchPlayers-container {
+  background-image: url(../../../assets/magnifier.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 50px 50px 150px 50px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.273);
+  opacity: 100%;
+  min-height: 500px;
+  position: relative;
+
+}
+
+h2 {
+  text-align: center;
+  margin: 10px 0;
+  color: whitesmoke
+}
+
+p {
+  color: whitesmoke
+}
+
+table {
+  margin-top: 50px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.search-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-div button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+.search-div button:hover {
+  background-color: gold;
+  color: whitesmoke
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+  width: 50%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="number"] {
+  width: 10%;
+}
+
+.centered-snackbar {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.reset-button {
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+  border: none;
+  padding: 10px 20px;
+  background-color: gold;
+  border-radius: 8px;
+}
+
+.search-div p {
+  width: 150px;
+}
+
+@media (max-width:1150px) {
+  input[type="number"] {
+    width: 13%;
+  }
+}
+
+@media (max-width:850px) {
+  .goBack-button {
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    margin: 40px 0 20px 80px;
+  }
+
+  input[type="number"] {
+    width: 15%;
+  }
+
+  .container {
+    width: 90%;
+    /* padding: 10px; */
+  }
+
+}
+
+@media (max-width:650px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+@media (max-width:550px) {
+
+  input[type="text"],
+  select {
+    width: 40%;
+  }
+
+  .search-div p {
+    width: 100px;
+  }
+}
